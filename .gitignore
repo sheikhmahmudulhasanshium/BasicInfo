@@ -1,23 +1,221 @@
-# Compiled class file
-*.class
+public class Human
+{
+	protected String name;
+	protected String dob;
+	protected String bloodgroup;
+	protected String gender;
+	
+	public Human()
+	{
+		System.out.println("Default Constructor By Human");
+	}
+	public Human(String name,String dob,String bloodgroup,String gender)
+	{
+		this.name=name;
+		this.dob=dob;
+		this.bloodgroup=bloodgroup;
+		this.gender=gender;
+	}
+	public void setInfo(String name,String dob,String bloodgroup,String gender)
+	{
+		this.name=name;
+		this.dob=dob;
+		this.bloodgroup=bloodgroup;
+		this.gender=gender;
+	}
+	
+	public void  showInfo()
+	{
+		System.out.println("_____________Human________________");
+		System.out.println("Name:"+name);
+		System.out.println("Date of Birth:"+dob);
+		System.out.println("Blood group:"+bloodgroup);
+		System.out.println("Gender:"+gender);
+	}
+	
+}
+import java.util.Scanner;
+public class Student extends Human
+{
+	public String  institute_name;
+	public int class_number;
+	public String section;
+	public int roll_no;
+	public Student()
+	{
+		System.out.println("Deafult Constructor By Student");
+	}
 
-# Log file
-*.log
+	public Student(String name,String dob,String bloodgroup,String gender)
+	{
 
-# BlueJ files
-*.ctxt
+		super(name,dob,bloodgroup,gender);
+		super.name=name;
+		super.dob=dob;
+		super.bloodgroup=bloodgroup;
+		super.gender=gender;
+		this.institute_name=institute_name;
+		this.roll_no=roll_no;
+		this.class_number=class_number;
+		this.section=section;
+	}
+	public void setInfo(String name,String dob,String bloodgroup,String gender)
+	{
+		super.setInfo(name,dob,bloodgroup,gender);
+		Scanner sin=new Scanner(System.in);
+		System.out.println("Institute:");
+		this.institute_name=institute_name;
+		institute_name=sin.next();
+		System.out.println("Roll No:");
+		this.roll_no=roll_no;
+		roll_no=sin.nextInt();
+		System.out.println("Class:");
+		this.class_number=class_number;
+		class_number=sin.nextInt();
+		System.out.println("Section:");
+		this.section=section;
+		section=sin.next();
+	}
+	public void  showInfo()
+	{
+		super.showInfo();
+		System.out.println("_____________Student________________");
+		System.out.println("Name:"+name);
+		System.out.println("Date of Birth:"+dob);
+		System.out.println("Blood group:"+bloodgroup);
+		System.out.println("Gender:"+gender);
+		
+		System.out.println("Insttitute:"+institute_name);
+		System.out.println("Roll No:"+roll_no);
+		System.out.println("Class:"+class_number);
+		System.out.println("Section:"+section);
+	}
+}
+import java.util.Scanner;
+public class ScienceStudent extends Student
+{
+	private float physics_gp;
+	private float chemistry_gp;
+	private float math_gp;
+	private float english_gp;
+	private float biology_gp;
+	private float bangla_gp;
+	private float ict_gp;
+	ScienceStudent()
+	{
+		System.out.println("Deafult Constructor By Science Student");
+	}
+	ScienceStudent(String name,String dob,String bloodgroup,String gender)
+	{
+		super(name,dob,bloodgroup,gender);
+		super.name=name;
+		super.dob=dob;
+		super.bloodgroup=bloodgroup;
+		super.gender=gender;
+		
+	/*	super.institute_name=institute_name;
+		super.roll_no=roll_no;
+		super.class_number=class_number;
+		super.section=section;
+		*/
+		this.institute_name=institute_name;
+		this.roll_no=roll_no;
+		this.class_number=class_number;
+		this.section=section;
+		
+		this.physics_gp=physics_gp;
+		this.chemistry_gp=chemistry_gp;
+		this.math_gp=math_gp;
+		this.biology_gp=biology_gp;
+		this.bangla_gp=bangla_gp;
+		this.ict_gp=ict_gp;
+		
+	}
+	
+	public void setInfo(String name,String dob,String bloodgroup,String gender)
+	{
+		super.setInfo(name,dob,bloodgroup,gender);
+		Scanner sin=new Scanner(System.in);
+		System.out.println("Physics:");
+		this.physics_gp=physics_gp;
+		physics_gp=sin.nextFloat();
+		System.out.println("Chemistry:");
+		this.chemistry_gp=chemistry_gp;
+		chemistry_gp=sin.nextFloat();
+		System.out.println("Mathematics:");
+		this.math_gp=math_gp;
+		math_gp=sin.nextFloat();
+		System.out.println("Biology:");
+		this.biology_gp=biology_gp;
+		biology_gp=sin.nextFloat();
+		System.out.println("Bangla:");
+		this.bangla_gp=bangla_gp;
+		bangla_gp=sin.nextFloat();
+		System.out.println("English:");
+		this.english_gp=english_gp;
+		english_gp=sin.nextFloat();
+		System.out.println("ICT:");
+		this.ict_gp=ict_gp;
+		ict_gp=sin.nextFloat();
+	}
+	
+	public void  showInfo()
+	{
+		super.showInfo();
+		System.out.println("_____________Science Student________________");
+		System.out.println("Name:"+name);
+		System.out.println("Date of Birth:"+dob);
+		System.out.println("Blood group:"+bloodgroup);
+		System.out.println("Gender:"+gender);
+		
+		System.out.println("Insttitute:"+institute_name);
+		System.out.println("Roll No:"+roll_no);
+		System.out.println("Class:"+class_number);
+		System.out.println("Section:"+section);
+		System.out.println(".............GPA out of 5.00................");
+		System.out.println("Physics:"+physics_gp);
+		System.out.println("Chemistry:"+chemistry_gp);
+		System.out.println("Mathematics:"+math_gp);
+		System.out.println("Biology:"+biology_gp);
+		System.out.println("Bangla:"+bangla_gp);
+		System.out.println("English:"+english_gp);
+		System.out.println("ICT:"+ict_gp);
+	}
+}
+class HumanMain
+{
+	public static void main(String args[])
+	{
+		Human ob=new Human();
+		ob.setInfo("Mr.X","XX/XX/XXXX","A+","Male");
+		ob.showInfo();
+	}
+}
+class StudentMain
+{
+	public static void main(String args[])
+	{
+		Human ob1=new Human();
+		ob1.setInfo("Mr.X","XX/XX/XXXX","A+","Male");
+		ob1.showInfo();
+		Student ob=new Student();
+		ob.setInfo("Mr.X","XX/XX/XXXX","A+","Male");
+		ob.showInfo();
+	}
+}
+public class ScienceStudentMain
+{
+	public static void main(String args[])
+	{
+		Human ob1=new Human();
+		ob1.setInfo("Mr.X","XX/XX/XXXX","A+","Male");
+		ob1.showInfo();
+		Student ob2=new Student();
+		ob2.setInfo("Mr.X","XX/XX/XXXX","A+","Male");
+		ob2.showInfo();
+		ScienceStudent ob3=new ScienceStudent();
+		ob3.setInfo("Mr.X","XX/XX/XXXX","A+","Male");
+		ob3.showInfo();
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+	}
+}
